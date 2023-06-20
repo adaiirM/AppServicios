@@ -7,9 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adairm.appservicios.Adapters.AdapterClientes
 import com.adairm.appservicios.DataBase.Entidades.Cliente
-import com.adairm.appservicios.DataBase.Repository.GestionServiciosRepository
 import com.adairm.appservicios.databinding.ActivityClientesBinding
-import com.adairm.appservicios.mvp.Interfaces.Presenters.IClientesPresenter
 import com.adairm.appservicios.mvp.Interfaces.Views.IClientesActivity
 import com.adairm.appservicios.mvp.Presenter.PresenterClientesActivity
 import kotlinx.coroutines.launch

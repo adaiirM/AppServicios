@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.adairm.appservicios.DataBase.Entidades.Cliente
-import com.adairm.appservicios.DataBase.Repository.GestionServiciosRepository
 import com.adairm.appservicios.databinding.ActivityRegistroClienteBinding
-import com.adairm.appservicios.mvp.Interfaces.Presenters.IRegistrarClientePresenter
 import com.adairm.appservicios.mvp.Interfaces.Views.IRegistroClienteActivity
 import com.adairm.appservicios.mvp.Presenter.PresenterRegistroClienteActivity
 import kotlinx.coroutines.launch

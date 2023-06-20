@@ -1,6 +1,5 @@
 package com.adairm.appservicios.mvp.View
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,13 +9,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.adairm.appservicios.Adapters.AdapterServiciosPendientes
-import com.adairm.appservicios.DataBase.Entidades.Cliente
 import com.adairm.appservicios.DataBase.Entidades.PagosRegistrados
 import com.adairm.appservicios.DataBase.Entidades.ServiciosPendientesDto
-import com.adairm.appservicios.DataBase.Repository.GestionServiciosRepository
 import com.adairm.appservicios.MainActivity
 import com.adairm.appservicios.databinding.ActivityInicioBinding
-import com.adairm.appservicios.mvp.Interfaces.Presenters.IInicioPresenter
 import com.adairm.appservicios.mvp.Interfaces.Views.IInicioActivity
 import com.adairm.appservicios.mvp.Presenter.PresenterInicioActivity
 import kotlinx.coroutines.launch

@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.adairm.appservicios.Adapters.AdapterClientes
 import com.adairm.appservicios.DataBase.Entidades.Cliente
 import com.adairm.appservicios.DataBase.Entidades.PagosRegistrados
-import com.adairm.appservicios.DataBase.Entidades.ServiciosPendientesDto
-import com.adairm.appservicios.DataBase.Repository.GestionServiciosRepository
 import com.adairm.appservicios.R
 import com.adairm.appservicios.databinding.ActivityRegistrarServicioBinding
 import com.adairm.appservicios.mvp.Interfaces.Views.IRegistrarServicioActivity
@@ -31,8 +29,6 @@ class RegistrarServicioActivity : AppCompatActivity(), IRegistrarServicioActivit
         val root = binding.root
         setContentView(root)
         presenter = PresenterRegistrarSevActivity(this, applicationContext)
-        GestionServiciosRepository.inicializar(this)
-        val db = GestionServiciosRepository.get()
 
         llenarSpinners()
         construirR()
@@ -105,8 +101,6 @@ class RegistrarServicioActivity : AppCompatActivity(), IRegistrarServicioActivit
             || binding.edtFechaFin.text.toString() == ""){
             mostrarText("Rellena todos los campos")
             flag = false
-        } else{
-
         }
         return flag
     }

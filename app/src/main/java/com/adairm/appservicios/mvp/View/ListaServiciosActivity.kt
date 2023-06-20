@@ -8,7 +8,6 @@ import com.adairm.appservicios.Adapters.AdapterClientes
 import com.adairm.appservicios.Adapters.AdapterServiciosPagados
 import com.adairm.appservicios.DataBase.Entidades.Cliente
 import com.adairm.appservicios.DataBase.Entidades.PagosRegistrados
-import com.adairm.appservicios.DataBase.Repository.GestionServiciosRepository
 import com.adairm.appservicios.databinding.ActivityListaServiciosBinding
 import com.adairm.appservicios.mvp.Interfaces.Views.IListaServiciosActivity
 import com.adairm.appservicios.mvp.Presenter.PresenterListaServicioActivity
@@ -29,16 +28,13 @@ class ListaServiciosActivity : AppCompatActivity(), IListaServiciosActivity {
         setContentView(root)
 
         presenter = PresenterListaServicioActivity(this, applicationContext)
-        GestionServiciosRepository.inicializar(this)
-        val db = GestionServiciosRepository.get()
-
-        buscar(db)
+        buscar()
     }
 
-    private fun buscar(db: GestionServiciosRepository){
+    private fun buscar(){
         binding.btnBuscar.setOnClickListener {
             val nombre = binding.edtNombre.text.toString()
-            var byId = 0
+            var byId: Int
 
             lifecycleScope.launch {
                 presenter.buscarPorNombre(nombre)
