@@ -11,14 +11,16 @@ import com.adairm.appservicios.DataBase.Entidades.PagosRegistrados
 import com.adairm.appservicios.DataBase.Repository.GestionServiciosRepository
 import com.adairm.appservicios.databinding.ActivityListaServiciosBinding
 import com.adairm.appservicios.mvp.Interfaces.Views.IListaServiciosActivity
+import com.adairm.appservicios.mvp.Presenter.PresenterListaServicioActivity
 import kotlinx.coroutines.launch
 
 class ListaServiciosActivity : AppCompatActivity(), IListaServiciosActivity {
     private lateinit var binding: ActivityListaServiciosBinding
     private lateinit var adapterRecycler: AdapterClientes
     private lateinit var adapterRecycler2: AdapterServiciosPagados
-    private lateinit var listCliente: List<Cliente>
+    private var listCliente = ArrayList<Cliente>()
     private lateinit var listPagos: List<PagosRegistrados>
+    private lateinit var presenter: PresenterListaServicioActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,7 @@ class ListaServiciosActivity : AppCompatActivity(), IListaServiciosActivity {
         val root = binding.root
         setContentView(root)
 
+        presenter = PresenterListaServicioActivity(this, applicationContext)
         GestionServiciosRepository.inicializar(this)
         val db = GestionServiciosRepository.get()
 
@@ -38,7 +41,7 @@ class ListaServiciosActivity : AppCompatActivity(), IListaServiciosActivity {
             var byId = 0
 
             lifecycleScope.launch {
-                listCliente = findByName(db, nombre)
+                presenter.buscarPorNombre(nombre)
                 binding.rvClientes.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false)
                 adapterRecycler = AdapterClientes(listCliente)
                 binding.rvClientes.adapter = adapterRecycler
@@ -48,7 +51,7 @@ class ListaServiciosActivity : AppCompatActivity(), IListaServiciosActivity {
                     byId = listCliente[id].idCliente
 
                     lifecycleScope.launch {
-                        listPagos = findById(db, byId, "Pagado")
+                        presenter.buscarPorId(byId)
                         binding.rcServiciosPagados.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false)
                         adapterRecycler2 = AdapterServiciosPagados(listPagos)
                         binding.rcServiciosPagados.adapter = adapterRecycler2

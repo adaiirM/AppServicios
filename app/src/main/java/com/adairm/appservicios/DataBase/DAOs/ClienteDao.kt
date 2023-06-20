@@ -17,5 +17,7 @@ interface ClienteDao {
 
     @Query("SELECT * FROM clientes WHERE nombre_completo LIKE :nombreCompleto")
     suspend fun findByName(nombreCompleto: String): List<Cliente>
-
 }
+
+
+

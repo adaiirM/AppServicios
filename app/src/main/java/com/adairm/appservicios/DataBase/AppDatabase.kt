@@ -16,5 +16,5 @@ abstract class AppDatabase: RoomDatabase() {
     abstract fun adminDao(): AdminDao
     abstract fun pagosRegistradosDao(): PagosRegistradosDao
     abstract fun clienteDao(): ClienteDao
-
 }
+

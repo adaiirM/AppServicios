@@ -3,14 +3,9 @@ package com.adairm.appservicios.mvp.Presenter
 import android.content.Context
 import com.adairm.appservicios.DataBase.Entidades.Cliente
 import com.adairm.appservicios.DataBase.Entidades.PagosRegistrados
-import com.adairm.appservicios.DataBase.Entidades.ServiciosPendientesDto
-import com.adairm.appservicios.mvp.Interactor.InteractorInicioImpl
 import com.adairm.appservicios.mvp.Interactor.InteractorListaServicioImpl
-import com.adairm.appservicios.mvp.Interfaces.Interactors.IInicioInteractor
 import com.adairm.appservicios.mvp.Interfaces.Interactors.IListaServiciosInteractor
-import com.adairm.appservicios.mvp.Interfaces.Presenters.IInicioPresenter
 import com.adairm.appservicios.mvp.Interfaces.Presenters.IListaServiciosPresenter
-import com.adairm.appservicios.mvp.Interfaces.Views.IInicioActivity
 import com.adairm.appservicios.mvp.Interfaces.Views.IListaServiciosActivity
 
 class PresenterListaServicioActivity (view: IListaServiciosActivity, context: Context): IListaServiciosPresenter {

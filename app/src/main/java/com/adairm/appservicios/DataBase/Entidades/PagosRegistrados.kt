@@ -35,4 +35,7 @@ data class PagosRegistrados(@ColumnInfo(name = "id_pago_registrado") @PrimaryKey
         this.estadoPago = estadoPago
         this.idCliente = idCliente
     }
+
+    constructor() : this(0) {
+    }
 }

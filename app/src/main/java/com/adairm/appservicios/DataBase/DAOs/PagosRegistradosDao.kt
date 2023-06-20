@@ -22,7 +22,7 @@ interface PagosRegistradosDao {
     @Update
     suspend fun updateEstado(pagoRegistrado: PagosRegistrados)
 
-    @Query("SELECT * FROM pagos_registrados WHERE id_cliente = :id")
+    @Query("SELECT * FROM pagos_registrados WHERE id_pago_registrado = :id")
     suspend fun findById(id: Int): PagosRegistrados
 
     @Query("SELECT * FROM pagos_registrados WHERE id_cliente = :id and estado_pago = :estadoPago")

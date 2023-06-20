@@ -30,7 +30,6 @@ class GestionServiciosRepository private constructor(context: Context){
     suspend fun findByEstado(estadoPago: String) = pagosRegistradosDao.findByEstado(estadoPago)
     suspend fun findById(id: Int) = pagosRegistradosDao.findById(id)
     suspend fun updateEstado(pagoRegistrado: PagosRegistrados) = pagosRegistradosDao.updateEstado(pagoRegistrado)
-    suspend fun getAllPagos() = pagosRegistradosDao.getAll()
 
     companion object{
         private var INSTANCE: GestionServiciosRepository? = null

@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         val root = binding.root
         setContentView(root)
 
-
-
         val sharedPreferences = getSharedPreferences("sesion", Context.MODE_PRIVATE)
         val sesion = sharedPreferences.getBoolean("sesion_activa", false)
         if (sesion){

@@ -25,6 +25,7 @@ class ClientesActivity : AppCompatActivity(), IClientesActivity{
         binding = ActivityClientesBinding.inflate(layoutInflater)
         val root = binding.root
         setContentView(root)
+        //Inicialziacion del objeto presenter
         presenter = PresenterClientesActivity(this, applicationContext)
 
         construirRecycler()
@@ -39,7 +40,9 @@ class ClientesActivity : AppCompatActivity(), IClientesActivity{
     }
 
     fun construirRecycler(){
+        //Inicia un corrutina para ejecutar los metodos de la base de datos
         lifecycleScope.launch {
+            //Mediante los metodos del presenter se manda un llamada para devolver los clientes
             presenter.mostrarClientes()
             binding.rvClientes.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false)
             adapterClientes = AdapterClientes(clientes)
@@ -48,6 +51,7 @@ class ClientesActivity : AppCompatActivity(), IClientesActivity{
         }
     }
 
+    //Recibe el resultado de la consulta del presenter
     override suspend fun mostrarClientes(clientes: ArrayList<Cliente>) {
         this.clientes = clientes
     }

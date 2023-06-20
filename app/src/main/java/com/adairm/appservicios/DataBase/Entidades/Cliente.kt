@@ -23,6 +23,7 @@ data class Cliente(@ColumnInfo(name = "id_cliente") @PrimaryKey(autoGenerate = t
         edad: String,
         telefono: String,
         correo: String
+
     ) : this(0){
         this.nombreCliente = nombreCliente
         this.apellidoPaterno = apellidoPaterno

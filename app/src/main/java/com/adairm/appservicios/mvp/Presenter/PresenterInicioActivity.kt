@@ -1,6 +1,7 @@
 package com.adairm.appservicios.mvp.Presenter
 
 import android.content.Context
+import com.adairm.appservicios.DataBase.Entidades.PagosRegistrados
 import com.adairm.appservicios.DataBase.Entidades.ServiciosPendientesDto
 import com.adairm.appservicios.mvp.Interactor.InteractorInicioImpl
 import com.adairm.appservicios.mvp.Interfaces.Interactors.IInicioInteractor
@@ -22,5 +23,17 @@ class PresenterInicioActivity (view: IInicioActivity, context: Context): IInicio
 
     override suspend fun getPagosPendientes(serviciosPendientes: ArrayList<ServiciosPendientesDto>) {
         view.mostrarPagosR(serviciosPendientes)
+    }
+
+    override suspend fun buscarPorId(id: Int) {
+        interactor.buscarPorId(id)
+    }
+
+    override suspend fun devolverPago(pagoRegistrado: PagosRegistrados) {
+        view.devolverPago(pagoRegistrado)
+    }
+
+    override suspend fun updatePago(pagoRegistrado: PagosRegistrados) {
+        interactor.updatePago(pagoRegistrado)
     }
 }
