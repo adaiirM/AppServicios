@@ -1,50 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:scrollbars="vertical"
-    tools:context=".RegistrarServicioActivity">
+
+    tools:context=".mvp.view.RegistrarServicioActivity">
 
     <TextView
-        android:layout_width="match_parent"
+
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="0dp"
         android:text="Registro de un nuevo servicio"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="16dp"
         android:text="Buscar cliente por nombre"/>
 
-    <EditText
-        android:id="@+id/editText2"
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/borde"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat"
-        tools:layout_editor_absoluteX="25dp" />
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edt_nombre"
+            android:layout_width="340dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/borde" />
+
+        <ImageButton
+            android:id="@+id/btn_buscar"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_search"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Clientes"/>
-
-    <androidx.recyclerview.widget.RecyclerView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_margin="15dp"
-        android:scrollbars="vertical"
-        tools:listitem="@layout/item_list_clientes"/>
+        android:layout_height="200dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_clientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            android:windowSoftInputMode="adjustResize"
+            tools:listitem="@layout/item_list_clientes"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/text_input_layout_id"
@@ -61,6 +80,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:focusable="false"
+            android:clickable="false"
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,28 +117,17 @@
             android:id="@+id/edt_monto_pago"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
+            android:inputType="numberDecimal"
             android:textColorHint="#757575" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_periodo"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <Spinner
+        android:id="@+id/spinner_periodo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="5dp"
-        android:hint="Periodo de suscripcion">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_periodo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
-
+        android:layout_marginTop="5dp"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -162,25 +172,15 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/text_input_layout_estado_pago"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+    <Spinner
+        android:id="@+id/spinner_estado_pago"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="5dp"
-        android:hint="Estado de pago">
+        android:layout_marginTop="5dp"/>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/edt_estado_pago"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:textColorHint="#757575" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
