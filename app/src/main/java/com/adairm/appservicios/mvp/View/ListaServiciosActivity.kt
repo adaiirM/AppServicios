@@ -55,24 +55,12 @@ class ListaServiciosActivity : AppCompatActivity(), IListaServiciosActivity {
                         binding.rcServiciosPagados.layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false)
                         adapterRecycler2 = AdapterServiciosPagados(listPagos)
                         binding.rcServiciosPagados.adapter = adapterRecycler2
-
-                        adapterRecycler2.setOnClickListener{
-
-                        }
+                        adapterRecycler2.setOnClickListener{}
                     }
                 }
             }
         }
     }
-
-    private suspend fun findByName(db: GestionServiciosRepository, nombreC: String): List<Cliente>{
-        return db.findByName(nombreC)
-    }
-
-    private suspend fun findById(db: GestionServiciosRepository, id: Int, estadoPago: String): List<PagosRegistrados>{
-        return db.findByIdEstado(id, estadoPago)
-    }
-
     override suspend fun devolverClientes(clientes: ArrayList<Cliente>) {
         this.listCliente = clientes
     }
