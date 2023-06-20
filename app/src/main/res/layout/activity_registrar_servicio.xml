@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center"
 
-    tools:context=".mvp.View.RegistrarServicioActivity">
+    tools:context=".mvp.view.RegistrarServicioActivity">
 
     <TextView
 

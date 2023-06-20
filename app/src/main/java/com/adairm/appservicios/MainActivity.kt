@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.adairm.appservicios.mvp.View.InicioActivity
+import com.adairm.appservicios.mvp.view.InicioActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.adairm.appservicios.databinding.ActivityMainBinding
 

@@ -13,39 +13,39 @@
         android:theme="@style/Theme.AppServicios"
         tools:targetApi="31">
         <activity
-            android:name=".mvp.View.ClientesActivity"
-            android:parentActivityName=".mvp.View.InicioActivity"
+            android:name=".mvp.view.ClientesActivity"
+            android:parentActivityName=".mvp.view.InicioActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".mvp.View.InicioActivity"
+            android:name=".mvp.view.InicioActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".mvp.View.RegistrarServicioActivity"
-            android:parentActivityName=".mvp.View.InicioActivity"
+            android:name=".mvp.view.RegistrarServicioActivity"
+            android:parentActivityName=".mvp.view.InicioActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".mvp.View.RegistroClienteActivity"
-            android:parentActivityName=".mvp.View.ClientesActivity"
+            android:name=".mvp.view.RegistroClienteActivity"
+            android:parentActivityName=".mvp.view.ClientesActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".mvp.View.ListaServiciosActivity"
-            android:parentActivityName=".mvp.View.InicioActivity"
+            android:name=".mvp.view.ListaServiciosActivity"
+            android:parentActivityName=".mvp.view.InicioActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
